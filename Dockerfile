@@ -18,8 +18,10 @@
 
 FROM node:16-alpine3.18 as angular
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
+COPY package.json package.json
+COPY server.js server.js
 COPY . .
 RUN npm install
 RUN npm run build
@@ -29,4 +31,4 @@ WORKDIR /usr/local/apache2/htdocs
 COPY --from=angular /app/dist/brl-front .
 
 # Démarrer nginx en mode démon
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
