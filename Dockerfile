@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Installer les dépendances
-RUN npm install
+RUN npm install --force
 
 # Copier tout le reste du code source de l'application Angular dans le conteneur
 COPY . .
