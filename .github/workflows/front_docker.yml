@@ -43,4 +43,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: henange01750/brl_front_docker:v1
+          tags: henange01750/brl_docker:front_v1
