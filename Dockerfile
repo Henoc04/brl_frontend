@@ -20,7 +20,7 @@ COPY . .
 RUN ls -la
 
 # Construire l'application Angular et afficher les erreurs
-RUN npm run build --prod || { echo "Build failed"; exit 1; }
+RUN npm run build --prod > build.log 2>&1 || { echo "Build failed. See build.log for details."; cat build.log; exit 1; }
 
 # Étape 2 : Préparer l'image nginx
 FROM nginx:alpine
