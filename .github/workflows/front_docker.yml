@@ -3,26 +3,26 @@ name: Build and Push Docker Images
 on:
   [push]
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  # build:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'  # Assurez-vous d'utiliser la version Node.js appropriée
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '20'  # Assurez-vous d'utiliser la version Node.js appropriée
 
-      - name: Install dependencies
-        run: npm install
+  #     - name: Install dependencies
+  #       run: npm install
 
-      - name: Build Angular app
-        run: npm run build --prod
+  #     - name: Build Angular app
+  #       run: npm run build --prod
 
   deploy:
-    needs: build
+    #needs: build
     runs-on: ubuntu-latest
     steps:
 
