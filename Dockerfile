@@ -1,11 +1,18 @@
 # Utiliser une image de base nginx
 FROM nginx:alpine
 
-# Copier les fichiers construits dans le répertoire de l'image nginx
-COPY ./dist/brl_front /usr/share/nginx/html
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /usr/share/nginx/html
 
-# Exposer le port 80
-EXPOSE 8080
+# Supprimer les fichiers existants dans le répertoire de travail par défaut de nginx
+RUN rm -rf ./*
 
-# Démarrer nginx
+# Copier les fichiers construits de votre application Angular dans le répertoire de travail du conteneur
+COPY ./dist/brl_front .
+
+# Exposer le port 80 (par défaut pour nginx)
+EXPOSE 80
+
+# Démarrer nginx en mode démon
 CMD ["nginx", "-g", "daemon off;"]
+
