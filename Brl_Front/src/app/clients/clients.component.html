@@ -1,0 +1,31 @@
+<div class="container">
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Liste des Clients</p></h1>
+  <td><a class="btn btn-success" [routerLink]="['/addclients']">Ajouter</a></td><br/>
+  <br/>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PIECE</th>
+      <th scope="col">CONTACT</th>
+      <th scope="col">ADRESSE</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let client of clients">
+    <tr>
+      <td>{{client.idClient}}</td>
+      <td>{{client.nameClient}}</td>
+      <td>{{client.pieceClient}}</td>
+      <td>{{client.contactClient}}</td>
+      <td>{{client.adresseClient}}</td>
+      <td><a class="btn btn-danger" (click)="supprimerClient(client)">Supprimer</a></td>
+      <td><a class="btn btn-success" [routerLink]="['/updateclient',client.idClient]">Modifier</a></td>
+    </tr>
+  </tbody>
+      </table>
+</div>
+</div>
+</div>

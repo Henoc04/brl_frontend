@@ -1,0 +1,29 @@
+<div class="container"><br/>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input readonly type="text" [(ngModel)]="currentResidence.idResidence" name="idResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Name</label>
+        <input type="text" [(ngModel)]="currentResidence.nameResidence" name="nameResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Localisation</label>
+        <input type="text" [(ngModel)]="currentResidence.localisationResidence" name="localisationResidence" class="form-control" >
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Prix</label>
+        <input type="text" [(ngModel)]= "currentResidence.prixResidence" name="prixResidence" class="form-control" >
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Type</label>
+        <input type="text" [(ngModel)]= "currentResidence.typeResidence" name="typeResidence" class="form-control" >
+      </div><br/>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="updateResidence()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

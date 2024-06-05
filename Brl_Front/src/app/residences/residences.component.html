@@ -1,0 +1,31 @@
+<div class="container">
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Liste des Residences</p></h1>
+  <td><a class="btn btn-success" [routerLink]="['/addresidences']">Ajouter</a></td><br/>
+  <br/>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Localisation</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let residence of residences">
+          <tr>
+            <td>{{residence.idResidence}}</td>
+            <td>{{residence.nameResidence}}</td>
+            <td>{{residence.localisationResidence}}</td>
+            <td>{{residence.prixResidence}}</td>
+            <td>{{residence.typeResidence?.libeleTypeResidence}}</td>
+            <td><a class="btn btn-danger" (click)="supprimerResidence(residence)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updateresidence',residence.idResidence]">Modifier</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>
+</div>

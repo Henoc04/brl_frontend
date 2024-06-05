@@ -1,0 +1,30 @@
+<div class="container"><br/>
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Enregistrement des Clients</p></h1>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div hidden class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input type="text" [(ngModel)]="newClient.idClient" name="idClient" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Name</label>
+        <input type="text" [(ngModel)]="newClient.nameClient" name="nameClient" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Pièce</label>
+        <input type="text" [(ngModel)]="newClient.pieceClient" name="pieceClient" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Contact</label>
+        <input type="text" [(ngModel)]="newClient.contactClient" name="contactClient" class="form-control" >
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Adresse</label>
+        <input type="text" [(ngModel)]= "newClient.adresseClient" name="adresseClient" class="form-control" >
+      </div><br/>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="ajouterClient()">Enregistrer</button>
+      </div>
+    </form>
+</div>
+</div>

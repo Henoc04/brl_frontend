@@ -1,0 +1,36 @@
+<div class="container"><br/>
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Enregistrement les Residences</p></h1>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div hidden class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input type="text" [(ngModel)]="newResidence.idResidence" name="idResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Name</label>
+        <input type="text" [(ngModel)]="newResidence.nameResidence" name="nameResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">localisation</label>
+        <input type="text" [(ngModel)]="newResidence.localisationResidence" name="localisationResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Prix</label>
+        <input type="text" [(ngModel)]="newResidence.prixResidence" name="prixResidence" class="form-control" >
+      </div>
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Type</label>
+        <select class="form-select" aria-label="Default select example" id="idTypeResidence" [(ngModel)]="newIdTypeResidence" name="idTypeResidence">
+          <option *ngFor="let types of listTypeResidences" [value]="types.idTypeResidence">
+            {{types.libeleTypeResidence}}
+          </option>
+        </select>
+      </div><br/>
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="ajouterResidence()">Enregistrer</button>
+      </div>
+    </form>
+</div>
+</div>
