@@ -5,7 +5,7 @@ FROM nginx:alpine
 COPY ./dist/brl_front /usr/share/nginx/html
 
 # Exposer le port 80
-EXPOSE 80
+EXPOSE 8080
 
 # Démarrer nginx
 CMD ["nginx", "-g", "daemon off;"]
