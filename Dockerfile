@@ -21,7 +21,7 @@ FROM node:16-alpine3.18 as angular
 WORKDIR /usr/src/app
 
 COPY package.json package.json
-COPY server.js server.js
+COPY server.ts server.ts
 COPY . .
 RUN npm install
 RUN npm run build
