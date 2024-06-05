@@ -1,34 +1,29 @@
-# # Utiliser une image de base nginx
-# FROM nginx:alpine
+# Étape 1 : Construction de l'application Angular
+FROM node:14-alpine as build
 
-# # Définir le répertoire de travail dans le conteneur
-# WORKDIR /usr/share/nginx/html
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
 
-# # Supprimer les fichiers existants dans le répertoire de travail par défaut de nginx
-# RUN rm -rf ./*
+# Copier le package.json et le package-lock.json (si présent)
+COPY package*.json ./
 
-# # Copier les fichiers construits de votre application Angular dans le répertoire de travail du conteneur
-# COPY ./dist/brl_front .
-
-# # Exposer le port 80 (par défaut pour nginx)
-# EXPOSE 80
-
-# # Démarrer nginx en mode démon
-# CMD ["nginx", "-g", "daemon off;"]
-
-FROM node:16-alpine3.18 as angular
-
-WORKDIR /usr/src/app
-
-COPY package.json package.json
-COPY server.ts server.ts
-COPY . .
+# Installer les dépendances
 RUN npm install
-RUN npm run build
 
-FROM httpd:alpine3.20
-WORKDIR /usr/local/apache2/htdocs
-COPY --from=angular /app/dist/brl-front .
+# Copier tout le reste du code source de l'application Angular dans le conteneur
+COPY . .
+
+# Construire l'application Angular
+RUN npm run build --prod
+
+# Étape 2 : Préparer l'image nginx
+FROM nginx:alpine
+
+# Copier les fichiers construits de l'étape 1 dans le répertoire par défaut de nginx
+COPY --from=build /app/dist/brl_front /usr/share/nginx/html
+
+# Exposer le port 80
+EXPOSE 80
 
 # Démarrer nginx en mode démon
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
