@@ -10,11 +10,17 @@ COPY package*.json ./
 # Installer les dépendances
 RUN npm install
 
+# Afficher les dépendances installées
+RUN ls -la node_modules
+
 # Copier tout le reste du code source de l'application Angular dans le conteneur
 COPY . .
 
-# Construire l'application Angular
-RUN npm run build --prod
+# Afficher le contenu du répertoire de travail
+RUN ls -la
+
+# Construire l'application Angular et afficher les erreurs
+RUN npm run build --prod || { echo "Build failed"; exit 1; }
 
 # Étape 2 : Préparer l'image nginx
 FROM nginx:alpine
