@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient, HttpClientModule, withFetch  } from '@angular/common/http';
 
 import { routes } from './app.routes';
+import { CommonModule } from '@angular/common';
 
 
 export const appConfig: ApplicationConfig = {
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideHttpClient(withFetch()),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
   ]
 };

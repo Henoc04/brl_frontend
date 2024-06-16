@@ -12,6 +12,7 @@
             <th scope="col">Localisation</th>
             <th scope="col">Prix</th>
             <th scope="col">Type</th>
+            <th scope="col">Etat</th>
           </tr>
         </thead>
         <tbody *ngFor="let residence of residences">
@@ -21,8 +22,9 @@
             <td>{{residence.localisationResidence}}</td>
             <td>{{residence.prixResidence}}</td>
             <td>{{residence.typeResidence?.libeleTypeResidence}}</td>
+            <td>{{residence.etatResidence}}</td>
             <td><a class="btn btn-danger" (click)="supprimerResidence(residence)">Supprimer</a></td>
-            <td><a class="btn btn-success" [routerLink]="['/updateresidence',residence.idResidence]">Modifier</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updateresidence',residence.idResidence]" ngSkipHydration>Modifier</a></td>
           </tr>
         </tbody>
       </table>

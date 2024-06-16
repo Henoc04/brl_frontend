@@ -1,0 +1,45 @@
+<div class="container"><br/>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input readonly type="text" [(ngModel)]="currentReservation.idReservation" name="idReservation" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date de reservation</label>
+        <input type="date" [(ngModel)]="currentReservation.dateReservation" name="dateReservation" class="form-control" >
+      </div>
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Client</label>
+        <select class="form-select" aria-label="Default select example" id="idClient" [(ngModel)]="updateClientId" name="idClientReservation">
+          <option *ngFor="let client of listeClient" [value]="client.idClient">
+            {{client.nameClient}}
+          </option>
+        </select>
+      </div><br/>
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Residence</label>
+        <select class="form-select" aria-label="Default select example" id="idResidence" [(ngModel)]="updateResidenceId" name="idResidenceReservation">
+          <option *ngFor="let residence of listeResidence" [value]="residence.idResidence">
+            {{residence.nameResidence}}
+          </option>
+        </select>
+      </div><br/>
+
+
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date de entrer</label>
+        <input type="date" [(ngModel)]="currentReservation.dateEntrer" name="dateEntrer" class="form-control" >
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Date de  sortie</label>
+        <input type="date" [(ngModel)]= "currentReservation.dateSortie" name="dateSortie" class="form-control" >
+      </div><br/>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="updateReservation()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

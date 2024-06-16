@@ -22,8 +22,8 @@
       <div class="col-md-6">
         <label for="idTypeResidence" class="form-label">Type</label>
         <select class="form-select" aria-label="Default select example" id="idTypeResidence" [(ngModel)]="newIdTypeResidence" name="idTypeResidence">
-          <option *ngFor="let types of listTypeResidences" [value]="types.idTypeResidence">
-            {{types.libeleTypeResidence}}
+          <option *ngFor="let type of listTypeResidences" [value]="type.idTypeResidence">
+            {{type.libeleTypeResidence}}
           </option>
         </select>
       </div><br/>

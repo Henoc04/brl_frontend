@@ -1,0 +1,48 @@
+<div class="container"><br/>
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Nouvelle Reservation</p></h1>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div hidden class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input type="text" [(ngModel)]="newReservation.idReservation" name="idResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date de reservation</label>
+        <input type="date" [(ngModel)]="newReservation.dateReservation" name="nameResidence" class="form-control" >
+      </div><br/>
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Client</label>
+        <select class="form-select" aria-label="Default select example" id="idClient" [(ngModel)]="newIdClient" name="idClient">
+          <option *ngFor="let client of listClient" [value]="client.idClient">
+            {{client.nameClient}}
+          </option>
+        </select>
+      </div><br/>
+
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Residence</label>
+        <select class="form-select" aria-label="Default select example" id="idResidence" [(ngModel)]="newIdResidence" name="idResidence">
+          <option *ngFor="let residence of listResidences" [value]="residence.idResidence">
+            {{residence.nameResidence}}
+          </option>
+        </select>
+      </div><br/>
+
+
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date d'entrer</label>
+        <input type="date" [(ngModel)]="newReservation.dateEntrer" name="dateentrer" class="form-control" >
+      </div><br/>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date de sortie</label>
+        <input type="date" [(ngModel)]="newReservation.dateSortie " name="datesortie" class="form-control" >
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="ajouterReservation()">Enregistrer</button>
+      </div>
+    </form>
+</div>
+</div>

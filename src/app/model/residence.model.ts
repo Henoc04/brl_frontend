@@ -6,4 +6,5 @@ export class Residence {
   localisationResidence! : string;
   prixResidence! : number;
   typeResidence! : TypeResidence;
+  etatResidence! : string;
 }

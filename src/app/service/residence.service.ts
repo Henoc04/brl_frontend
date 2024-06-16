@@ -15,6 +15,8 @@ const httpOptions = {
 export class ResidenceService {
 
   apiURL: string = 'http://localhost:8080/brl/api/residence';
+  
+  // pour avoir la liste des type lors de l'ajout d'une nouvelle residence
   apiURL1: string = 'http://localhost:8080/brl/api/typeresidence';
 
   constructor(private http : HttpClient) { }
@@ -42,7 +44,7 @@ export class ResidenceService {
   }
 
 
-  
+  // pour avoir la liste des type lors de l'ajout d'une nouvelle residence
   listeTypResidenceService():Observable<TypeResidence[]>{
     return this.http.get<TypeResidence[]>(this.apiURL1);
     }

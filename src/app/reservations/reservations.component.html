@@ -1,0 +1,37 @@
+<div class="container">
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Liste des Reservations</p></h1>
+  <td><a class="btn btn-success" [routerLink]="['/addreservation']">Ajouter</a></td><br/>
+  <br/>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Date de reservation</th>
+            <th scope="col">Nom et Prénoms</th>
+            <th scope="col">Residence</th>
+            <th scope="col">Date Entrer</th>
+            <th scope="col">Date Sortie</th>
+            <th scope="col">Total</th>
+            <th scope="col">Etat</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let reservation of reservations" [ngClass]="getRowClass(reservation.etatReservation)">
+          <tr>
+            <td>{{reservation.idReservation}}</td>
+            <td>{{reservation.dateReservation | date:'dd MMMM yyyy'}}</td>
+            <td>{{reservation.client?.nameClient}}</td>
+            <td>{{reservation.residence?.nameResidence}}</td>
+            <td>{{reservation.dateEntrer | date:'dd MMMM yyyy'}}</td>
+            <td>{{reservation.dateSortie | date:'dd MMMM yyyy'}}</td>
+            <td>{{reservation.total}}</td>
+            <td>{{reservation.etatReservation}}</td>
+            <td><a class="btn btn-danger" (click)="supprimerReservation(reservation)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updatereservation',reservation.idReservation]" ngSkipHydration>Modifier</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>
+</div>
