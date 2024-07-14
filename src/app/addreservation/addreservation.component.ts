@@ -32,7 +32,7 @@ export class AddreservationComponent {
   constructor(private reservationService: ReservationService,
     //initialisation de la liste lors de l'ajout
     private router : Router){
-     this.reservationService.listeResidence().subscribe(residences => {this.listResidences = residences;
+     this.reservationService.listeResidence().subscribe(residences => {this.listResidences = residences.filter(res => res.etatResidence === 'Disponible');
          console.log(residences);
     });
 

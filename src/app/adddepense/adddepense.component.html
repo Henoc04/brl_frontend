@@ -1,0 +1,43 @@
+<div class="container"><br/>
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Enregistrement les Residences</p></h1>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div hidden class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input type="text" [(ngModel)]="newDepense.idDepense" name="idDepense" class="form-control" >
+      </div>
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Residence</label>
+        <select class="form-select" aria-label="Default select example" id="idResidence" [(ngModel)]="newIdResidence" name="idResidence">
+          <option *ngFor="let residence of listResidences" [value]="residence.idResidence">
+            {{residence.nameResidence}}
+          </option>
+        </select>
+      </div><br/>
+
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Libele</label>
+        <input type="text" [(ngModel)]="newDepense.libeleDepense" name="libeleDepense" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Montant</label>
+        <input type="text" [(ngModel)]="newDepense.montantDepense" name="montantDepense" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date</label>
+        <input type="date" [(ngModel)]="newDepense.dateDepense" name="dateDepense" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Description</label>
+        <input type="text" [(ngModel)]="newDepense.descriptionDepense" name="descriptionDepense" class="form-control" >
+      </div>
+
+
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="ajouterDepense()">Enregistrer</button>
+      </div>
+    </form>
+</div>
+</div>

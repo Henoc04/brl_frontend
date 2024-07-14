@@ -1,0 +1,34 @@
+<div class="container">
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Depenses</p></h1>
+  <td><a class="btn btn-success" [routerLink]="['/adddepense']">Ajouter</a></td><br/>
+  <br/>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Residence</th>
+            <th scope="col">Name</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let depense of depenses">
+          <tr>
+            <td>{{depense.idDepense}}</td>
+            <td>{{depense.residence?.nameResidence}}</td>
+            <td>{{depense.libeleDepense}}</td>
+            <td>{{depense.montantDepense}}</td>
+            <td>{{depense.dateDepense | date:'dd MMMM yyyy'}}</td>
+            <td>{{depense.descriptionDepense}}</td>
+
+            <td><a class="btn btn-danger" (click)="supprimerDepense(depense)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updatedepense',depense.idDepense]">Modifier</a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+</div>
+</div>

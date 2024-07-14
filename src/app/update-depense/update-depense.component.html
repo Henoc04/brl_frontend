@@ -1,0 +1,42 @@
+<div class="container"><br/>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input readonly type="text" [(ngModel)]="currentDepense.idDepense" name="idDepense" class="form-control" >
+      </div>
+
+
+      <div class="col-md-6">
+        <label for="idTypeResidence" class="form-label">Residence</label>
+        <select class="form-select" aria-label="Default select example" id="idResidence" [(ngModel)]="updatedResidenceId" name="idResidence">
+          <option *ngFor="let residence of listResidence" [value]="residence.idResidence">
+            {{residence.nameResidence}}
+          </option>
+        </select>
+      </div><br/>
+
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Libele</label>
+        <input type="text" [(ngModel)]="currentDepense.libeleDepense" name="libeleDepense" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Montant</label>
+        <input type="text" [(ngModel)]="currentDepense.montantDepense" name="montantDepense" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Date</label>
+        <input type="date" [(ngModel)]="currentDepense.dateDepense" name="dateDepense" class="form-control" >
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Description</label>
+        <input type="text" [(ngModel)]= "currentDepense.descriptionDepense" name="descriptionDepense" class="form-control" >
+      </div>
+
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="updateDepense()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

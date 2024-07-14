@@ -6,8 +6,6 @@ import { Client } from '../model/client.model';
 import { Residence } from '../model/residence.model';
 
 
-
-
 const httpOptions = {
   headers: new HttpHeaders( {'Content-Type': 'application/json'} )
 };

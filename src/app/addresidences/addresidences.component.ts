@@ -9,7 +9,10 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-addresidences',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [
+    FormsModule,
+    CommonModule
+  ],
   templateUrl: './addresidences.component.html',
   styleUrl: './addresidences.component.css'
 })

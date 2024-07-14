@@ -1,0 +1,18 @@
+<div class="container"><br/>
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Ajouter un nouveau type de residence</p></h1>
+  <div class="bg-secondary text-white p-3 mb-2">
+    <form>
+      <div hidden class="col-md-4">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input type="text" [(ngModel)]="newTypeResidence.idTypeResidence" name="idTypeResidence" class="form-control" >
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Nom</label>
+        <input type="text" [(ngModel)]="newTypeResidence.libeleTypeResidence" name="libeleTypeResidence" class="form-control" >
+      </div><br/>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="ajouterTypeResidence()">Enregistrer</button>
+      </div>
+    </form>
+</div>
+</div>

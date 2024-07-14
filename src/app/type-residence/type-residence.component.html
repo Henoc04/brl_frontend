@@ -1,6 +1,6 @@
 <div class="container">
-  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Liste des Types de residence</p></h1>
-  <td><a class="btn btn-success" >Ajouter</a></td><br/>
+  <h1><p align="center" style="color: red; font-family: 'Times New Roman', Times, serif;">Types de residence</p></h1>
+  <td><a class="btn btn-success" [routerLink]="['/addtyperesidence']">Ajouter</a></td><br/>
   <br/>
   <div class="card shadow mb-4">
     <div class="card-body">
@@ -15,8 +15,8 @@
     <tr>
       <td>{{type.idTypeResidence}}</td>
       <td>{{type.libeleTypeResidence}}</td>
-      <td><a class="btn btn-danger" >Supprimer</a></td>
-      <td><a class="btn btn-success" >Modifier</a></td>
+      <td><a class="btn btn-danger" (click)="supprimerTypeResidence(type)">Supprimer</a></td>
+      <td><a class="btn btn-success" [routerLink]="['/updatetyperesidence',type.idTypeResidence]">Modifier</a></td>
     </tr>
   </tbody>
       </table>

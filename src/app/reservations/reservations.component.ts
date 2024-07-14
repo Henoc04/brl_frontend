@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Reservation } from '../model/reservation.model';
 import { ReservationService } from '../service/reservation.service';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-reservations',
@@ -36,7 +37,10 @@ export class ReservationsComponent {
     if (conf)
       this.reservationService.supprimerReservationService(r.idReservation).subscribe(() => {
         this.allReservation();
-    this.router.navigate(['reservations']);
+        this.router.navigate(['reservations']);
+      },
+      error => {
+        console.error('Erreur lors de la suppression de la réservation : ', error);
     });
   }
 

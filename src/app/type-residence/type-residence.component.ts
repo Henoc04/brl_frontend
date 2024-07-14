@@ -30,4 +30,13 @@ export class TypeResidenceComponent {
    });
   }
 
+  supprimerTypeResidence(r: TypeResidence){
+    let conf = confirm("Etes-vous sûr ? ");
+    if (conf)
+      this.typeResidenceService.supprimerTypeResidenceService(r.idTypeResidence).subscribe(() => {
+        this.allTypes();
+    this.router.navigate(['typeresidence']);
+    });
+  }
+
 }
